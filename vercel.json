@@ -1,0 +1,5 @@
+﻿{
+  "buildCommand": "cd localbuzzz && npm install && npm run build",
+  "outputDirectory": "localbuzzz/dist",
+  "installCommand": "cd localbuzzz && npm install"
+}
