@@ -22,10 +22,10 @@ function EventCard({
       <p>{event.venue}</p>
 
       <p>
-        👁 {stats.views0| ❤️ {stats.saves} | 🙋 {stats.attends}
+         {stats.views0|  {stats.saves} |  {stats.attends}
       </p>
 
-      <p>⭐ Score: {score}</p>
+      <p> Score: {score}</p>
 
       <button onClick={onView}>View</button>
       <button onClick={onSave}>Save</button>
