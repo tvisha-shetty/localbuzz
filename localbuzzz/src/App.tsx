@@ -1387,25 +1387,26 @@ if (screen === "home") {
 >
   Start Exploring
 </button>
-            {userRole === "organizer" && (
-  <button
-    onClick={() => setScreen("dashboard")}
-    className="btn-animate"
-    style={{
-      padding: "14px 28px",
-      background: "#ffffff",
-      color: "#ff7a00",
-      border: "2px solid #ff7a00",
-      borderRadius: "10px",
-      fontSize: "16px",
-      cursor: "pointer",
-      fontWeight: 600
-    }}
-  >
-    Go to Dashboard
-  </button>
-)}
-
+           <button
+  onClick={() => { 
+    setSelectedRole("organizer"); 
+    setAuthMode("signup"); 
+    setShowAuthModal(true);
+  }}
+  className="btn-animate"
+  style={{
+    padding: "14px 28px",
+    background: "#ffffff",
+    color: "#ff7a00",
+    border: "2px solid #ff7a00",
+    borderRadius: "10px",
+    fontSize: "16px",
+    cursor: "pointer",
+    fontWeight: 600
+  }}
+>
+  I'm an Organizer
+</button>
           </div>
         </div>
        {/* AI SEARCH BAR */}
