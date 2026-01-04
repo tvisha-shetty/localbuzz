@@ -233,45 +233,29 @@ setCameFromPricing(false);
     setScreen("landing");
   };
 
-  totalEvents: organizerEvents.length || 0,
-  totalViews: organizerEvents.reduce((sum, e) => sum + (e.views || 0), 0),
-  totalClicks: organizerEvents.reduce((sum, e) => sum + (e.clicks || 0), 0),
-  totalInterested: totalAttending || 0,
-  engagementRate: 0,
-  avgViewsPerEvent: 0,
-  avgClicksPerEvent: 0,
-  avgInterestPerEvent: 0,
-  topEvents: organizerEvents.slice(0, 3).map(e => ({
-    title: e.title,
-    category: e.category,
-    date: e.date,
-    views: e.views || 0,
-    clicks: e.clicks || 0,
-    interested: e.attending || 0
-  })),
-  categoryBreakdown: []
-    totalEvents: 150,
-    totalViews: 3381,
-    totalClicks: 1764,
-    totalInterested: 191,
-    engagementRate: 52.2,
-    avgViewsPerEvent: 225,
-    avgClicksPerEvent: 118,
-    avgInterestPerEvent: 19,
-    topEvents: [
-      { title: "Morning Yoga in the Park", category: "Fitness", date: "Sunday • 7:00 AM", views: 856, clicks: 389, interested: 45 },
-      { title: "Temple Bhajan Morning", category: "Religious", date: "Friday • 6:00 AM", views: 1289, clicks: 678, interested: 67 },
-      { title: "Live Indie Music Concert", category: "Music", date: "Saturday • 8:00 PM", views: 412, clicks: 298, interested: 34 }
-    ],
-    categoryBreakdown: [
-      { name: "Fitness", count: 4 },
-      { name: "Religious", count: 2 },
-      { name: "Social", count: 3 },
-      { name: "Music", count: 2 },
-      { name: "Creative", count: 2 },
-      { name: "Outdoor", count: 1 }
-    ]
-  };
+ const ANALYTICS = {
+  totalEvents: 150,
+  totalViews: 3381,
+  totalClicks: 1764,
+  totalInterested: 191,
+  engagementRate: 52.2,
+  avgViewsPerEvent: 225,
+  avgClicksPerEvent: 118,
+  avgInterestPerEvent: 19,
+  topEvents: [
+    { title: "Morning Yoga in the Park", category: "Fitness", date: "Sunday • 7:00 AM", views: 856, clicks: 389, interested: 45 },
+    { title: "Temple Bhajan Morning", category: "Religious", date: "Friday • 6:00 AM", views: 1289, clicks: 678, interested: 67 },
+    { title: "Live Indie Music Concert", category: "Music", date: "Saturday • 8:00 PM", views: 412, clicks: 298, interested: 34 }
+  ],
+  categoryBreakdown: [
+    { name: "Fitness", count: 4 },
+    { name: "Religious", count: 2 },
+    { name: "Social", count: 3 },
+    { name: "Music", count: 2 },
+    { name: "Creative", count: 2 },
+    { name: "Outdoor", count: 1 }
+  ]
+};
 
   const HARD_CODED_EVENT_STATS = { views: 1240, clicks: 486, interested: 92, ctr: "39.2%" };
 
