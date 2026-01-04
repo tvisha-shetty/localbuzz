@@ -530,7 +530,6 @@ setCameFromPricing(false);
             <button onClick={() => {
   setSelectedRole("organizer");
   setAuthMode("signup");
-  setCameFromPricing(false);   // IMPORTANT
   setShowAuthModal(true);
 }}
  className="btn-animate" style={{ padding: "14px 28px", background: "#ffffff", color: "#ff7a00", border: "2px solid #ff7a00", borderRadius: "10px", fontSize: "16px", cursor: "pointer", fontWeight: 600 }}>I'm an Organizer</button>
@@ -1945,4 +1944,5 @@ if (screen === "home") {
 }
 
 export default App;
+
 
