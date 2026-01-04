@@ -1,0 +1,1 @@
+@tailwind base;@tailwind components;@tailwind utilities;*{font-family:Space Grotesk,sans-serif}body{@apply bg-gradient-to-br from-slate-50 to-slate-100 text-slate-800;font-family:Inter,system-ui,sans-serif}
