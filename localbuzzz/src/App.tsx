@@ -424,8 +424,11 @@ setCameFromPricing(false);
           <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
             <button onClick={() => { if (fakeUser) { setScreen("home"); } else { setSelectedRole("customer"); setAuthMode("signup"); setShowAuthModal(true); } }} className="btn-animate glow-button" style={{ padding: "14px 28px", background: "#ff7a00", color: "#fff", border: "none", borderRadius: "10px", fontSize: "16px", cursor: "pointer", fontWeight: "600" }}>Explore Activities →</button>
            <button
-  onClick={() => { setSelectedRole("organizer"); setAuthMode("signup"); setShowAuthModal(true); }}
-
+  onClick={() => { 
+    setSelectedRole("organizer"); 
+    setAuthMode("signup"); 
+    setShowAuthModal(true);
+  }}
   className="btn-animate"
   style={{
     padding: "14px 28px",
