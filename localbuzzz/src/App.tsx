@@ -185,9 +185,7 @@ const [viewingEventDetail, setViewingEventDetail] = useState<number | null>(null
        const target = postAuthTarget ?? (role === "organizer" ? "dashboard" : "home");
 setScreen(target);
 setPostAuthTarget(null);
-setCameFromPricing(false);
 
-        setCameFromPricing(false);
       } else {
         userCred = await createUserWithEmailAndPassword(auth, email, password);
         localStorage.setItem(`role_${userCred.user.email}`, selectedRole);
@@ -1944,5 +1942,6 @@ if (screen === "home") {
 }
 
 export default App;
+
 
 
