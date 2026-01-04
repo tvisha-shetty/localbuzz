@@ -372,8 +372,8 @@ setPostAuthTarget(null);
             </div>
           </div>
         )}
-        <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} style={{ width: "100%", padding: "12px", marginBottom: "12px", borderRadius: "8px", border: "1px solid #ccc", fontSize: "14px", boxSizing: "border-box" }} />
-        <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} style={{ width: "100%", padding: "12px", marginBottom: "16px", borderRadius: "8px", border: "1px solid #ccc", fontSize: "14px", boxSizing: "border-box" }} />
+        <input type="email" placeholder="Email" autoComplete="email" value={email} onChange={e => setEmail(e.target.value)} style={{ width: "100%", padding: "12px", marginBottom: "12px", borderRadius: "8px", border: "1px solid #ccc", fontSize: "14px", boxSizing: "border-box" }} />
+        <input type="password" placeholder="Password" autoComplete="current-password" value={password} onChange={e => setPassword(e.target.value)} style={{ width: "100%", padding: "12px", marginBottom: "16px", borderRadius: "8px", border: "1px solid #ccc", fontSize: "14px", boxSizing: "border-box" }} />
         <button onClick={() => handleAuth(authMode)} className="btn-animate" style={{ width: "100%", padding: "12px", background: "#ff7a00", color: "#fff", border: "none", borderRadius: "10px", fontSize: "15px", cursor: "pointer", fontWeight: "600", marginBottom: "12px" }}>{authMode === "signin" ? "Sign In" : "Create Account"}</button>
         <button onClick={handleGoogleAuth} className="btn-animate" style={{ width: "100%", padding: "12px", background: "#fff", color: "#333", border: "1px solid #ccc", borderRadius: "10px", fontSize: "15px", cursor: "pointer", fontWeight: "600", marginBottom: "16px" }}>Continue with Google</button>
         <div style={{ textAlign: "center", fontSize: "14px", color: "#666" }}>
@@ -1942,6 +1942,7 @@ if (screen === "home") {
 }
 
 export default App;
+
 
 
 
