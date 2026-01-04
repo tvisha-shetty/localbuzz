@@ -233,7 +233,25 @@ setCameFromPricing(false);
     setScreen("landing");
   };
 
-  const ANALYTICS = {
+const ANALYTICS = {
+  totalEvents: organizerEvents.length || 0,
+  totalViews: organizerEvents.reduce((sum, e) => sum + (e.views || 0), 0),
+  totalClicks: organizerEvents.reduce((sum, e) => sum + (e.clicks || 0), 0),
+  totalInterested: totalAttending || 0,
+  engagementRate: 0,
+  avgViewsPerEvent: 0,
+  avgClicksPerEvent: 0,
+  avgInterestPerEvent: 0,
+  topEvents: organizerEvents.slice(0, 3).map(e => ({
+    title: e.title,
+    category: e.category,
+    date: e.date,
+    views: e.views || 0,
+    clicks: e.clicks || 0,
+    interested: e.attending || 0
+  })),
+  categoryBreakdown: []
+};  const ANALYTICS = {
     totalEvents: 150,
     totalViews: 3381,
     totalClicks: 1764,
@@ -306,7 +324,7 @@ setCameFromPricing(false);
   const totalAttending = organizerEvents.reduce((sum, e) => sum + (e.attendees?.length || 0), 0);
 
   const incrementAttending = (index: number) => {
-    setEvents(prev => prev.map((e, i) => {
+    setEvents(prev => prev.map((e, _i) => {
       if (i !== index) return e;
       const currentCount = e.attendees?.length || 0;
       const nextGuestNumber = currentCount + 1;
@@ -826,7 +844,7 @@ setCameFromPricing(false);
                   attendees: []
                 };
                 if (editingEvent !== null) {
-                  setEvents(prev => prev.map((e, i) => (i === editingEvent ? { ...e, ...newEvent } : e)));
+                  setEvents(prev => prev.map((e, _i) => (i === editingEvent ? { ...e, ...newEvent } : e)));
                   setEditingEvent(null);
                 } else {
                   setEvents(prev => [newEvent, ...prev]);
@@ -943,7 +961,7 @@ setCameFromPricing(false);
                     "Your event 'Live Indie Music Concert' reached 412 views",
                     "'Cycling Community Ride' got 15 interested users",
                     "New comment on 'Weekend Book Club Meetup'"
-                  ].map((activity, i) => (
+                  ].map((activity, _i) => (
                     <div key={i} style={{ padding: "16px", background: "#f9fafb", borderRadius: "10px", fontSize: "14px", color: "#374151", borderLeft: "4px solid #ff7a00" }}>{activity}</div>
                   ))}
                 </div>
@@ -969,7 +987,7 @@ setCameFromPricing(false);
                 </div>
               ) : (
                 <div className="bento-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))", gap: "24px" }}>
-                  {organizerEvents.map((event, i) => {
+                  {organizerEvents.map((event, _i) => {
                     const actualIndex = events.findIndex(e => e === event);
                     return (
                       <div key={actualIndex} className="bento-card activity-card-glow" style={{ background: "#fff", borderRadius: "20px", overflow: "hidden", boxShadow: "0 4px 12px rgba(0,0,0,0.08)", position: "relative", transition: "transform 0.3s ease" }}>
@@ -1074,7 +1092,7 @@ setCameFromPricing(false);
               <p style={{ fontSize: "16px", color: "#666", marginBottom: "32px" }}>All Attendees ({totalAttending} total)</p>
               
               <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-                {organizerEvents.map((event, i) => (
+                {organizerEvents.map((event, _i) => (
                   <div key={i} className="bento-card" style={{ background: "#fff", padding: "32px", borderRadius: "20px", position: "relative" }}>
                     <div className="glow-border"></div>
                     <h3 style={{ fontSize: "20px", fontWeight: "700", marginBottom: "20px", color: "#1f2937" }}>{event.title}</h3>
@@ -1416,7 +1434,7 @@ if (screen === "home") {
             ))}
           </div>
           <div className="bento-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "24px" }}>
-  {enrichedEvents.map((event, i) => (
+  {enrichedEvents.map((event, _i) => (
     <div key={i} className="bento-card activity-card-glow" style={{ background: "#fff", borderRadius: "20px", overflow: "hidden", boxShadow: "0 4px 12px rgba(0,0,0,0.08)", position: "relative" }}>
       <div className="glow-border"></div>
       <img src={event.image} alt={event.title} style={{ width: "100%", height: "220px", objectFit: "cover" }} />
