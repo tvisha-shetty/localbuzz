@@ -5,7 +5,7 @@
 export default function LandingHero() {
   return (
     <section className="relative overflow-hidden">
-      {/* <HeroSectionOne /> */}
+      <HeroSectionOne />
     </section>
   );
 }
