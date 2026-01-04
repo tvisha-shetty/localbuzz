@@ -826,7 +826,7 @@ setCameFromPricing(false);
                   attendees: []
                 };
                 if (editingEvent !== null) {
-                  setEvents(prev => prev.map((e, _i) => (i === editingEvent ? { ...e, ...newEvent } : e)));
+                  setEvents(prev => prev.map((e, _i) => (_i === editingEvent ? { ...e, ...newEvent } : e)));
                   setEditingEvent(null);
                 } else {
                   setEvents(prev => [newEvent, ...prev]);
