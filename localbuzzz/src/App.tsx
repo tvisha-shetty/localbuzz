@@ -233,7 +233,6 @@ setCameFromPricing(false);
     setScreen("landing");
   };
 
-const ANALYTICS = {
   totalEvents: organizerEvents.length || 0,
   totalViews: organizerEvents.reduce((sum, e) => sum + (e.views || 0), 0),
   totalClicks: organizerEvents.reduce((sum, e) => sum + (e.clicks || 0), 0),
@@ -251,7 +250,6 @@ const ANALYTICS = {
     interested: e.attending || 0
   })),
   categoryBreakdown: []
-};  const ANALYTICS = {
     totalEvents: 150,
     totalViews: 3381,
     totalClicks: 1764,
