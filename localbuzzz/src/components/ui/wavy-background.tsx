@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createNoise3D } from "simplex-noise";
 
 // Inline cn utility
@@ -65,11 +65,11 @@ export const WavyBackground = ({
   };
 
   const waveColors = colors ?? [
-    "#ff7a00", // Orange
-    "#fbbf24", // Yellow
-    "#ea580c", // Deep orange
-    "#dc2626", // Red
-    "#f59e0b", // Amber
+    "#ff7a00",
+    "#fbbf24",
+    "#ea580c",
+    "#dc2626",
+    "#f59e0b",
   ];
   const drawWave = (n: number) => {
     nt += getSpeed();
