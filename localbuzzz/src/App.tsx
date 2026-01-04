@@ -360,7 +360,7 @@ setPostAuthTarget(null);
 
   const AuthModal = () => (
     <div onClick={() => setShowAuthModal(false)} style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", background: "rgba(0,0,0,0.5)", display: "flex", justifyContent: "center", alignItems: "center", zIndex: 9999 }}>
-      <div onClick={e => e.stopPropagation()} className="auth-modal-glow" style={{ background: "#fff", padding: "32px", borderRadius: "20px", width: "90%", maxWidth: "420px", boxShadow: "0 20px 60px rgba(0,0,0,0.3)", position: "relative" }}>
+      <div key="auth-modal" onClick={e => e.stopPropagation()} className="auth-modal-glow" style={{ background: "#fff", padding: "32px", borderRadius: "20px", width: "90%", maxWidth: "420px", boxShadow: "0 20px 60px rgba(0,0,0,0.3)", position: "relative" }}>
         <div className="glow-border"></div>
         <h2 style={{ marginBottom: "24px", fontSize: "24px", fontWeight: "700", textAlign: "center" }}>{authMode === "signin" ? "Welcome Back!" : "Join LocalBuzz"}</h2>
         {authMode === "signup" && (
@@ -1942,6 +1942,7 @@ if (screen === "home") {
 }
 
 export default App;
+
 
 
 
